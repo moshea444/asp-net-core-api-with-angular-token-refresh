@@ -1,0 +1,11 @@
+AspNetCoreAngularTokenAuth/Data/obj/
+AspNetCoreAngularTokenAuth/Domain/obj/project.assets.json
+AspNetCoreAngularTokenAuth/Services/obj/
+AspNetCoreAngularTokenAuth/WebApi/obj/
+AspNetCoreAngularTokenAuth/WebApi/bin/Debug/netcoreapp2.1/WebApi.deps.json
+AspNetCoreAngularTokenAuth/WebApi/bin/
+AspNetCoreAngularTokenAuth/Services/bin/
+AspNetCoreAngularTokenAuth/Domain/obj/
+AspNetCoreAngularTokenAuth/Domain/bin/
+AspNetCoreAngularTokenAuth/Data/bin/
+AspNetCoreAngularTokenAuth/.vs/
