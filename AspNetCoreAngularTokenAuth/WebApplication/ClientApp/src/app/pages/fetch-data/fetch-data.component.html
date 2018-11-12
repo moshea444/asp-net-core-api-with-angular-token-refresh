@@ -4,6 +4,9 @@
 
 <p *ngIf="!forecasts"><em>Loading...</em></p>
 
+
+<input type="button" (click)="onTest()" value="TEST" />
+{{message}}
 <table class='table' *ngIf="forecasts">
   <thead>
     <tr>

@@ -1,0 +1,58 @@
+<h2>Register</h2>
+<form name="registerForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+  <div class="form-group">
+    <label for="firstname">First name</label>
+    <input type="text" formControlName="firstName" class="form-control" [(ngModel)]="registerDto.firstName" required [ngClass]="{ 'is-invalid': submitted && registerForm.firstName.errors }" />
+    <div *ngIf="submitted && registerForm.firstName.errors" class="invalid-feedback">
+      <div *ngIf="registerForm.firstName.errors.required">First name is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastname">Last name</label>
+    <input type="text" formControlName="lastName" class="form-control" [(ngModel)]="registerDto.lastName" required [ngClass]="{ 'is-invalid': submitted && registerForm.lastName.errors }" />
+    <div *ngIf="submitted && registerForm.lastName.errors" class="invalid-feedback">
+      <div *ngIf="registerForm.lastName.errors.required">Last name is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" formControlName="email" class="form-control" [(ngModel)]="registerDto.email" required [ngClass]="{ 'is-invalid': submitted && registerForm.email.errors }" />
+    <div *ngIf="submitted && registerForm.email.errors" class="invalid-feedback">
+      <div *ngIf="registerForm.email.errors.required">Email is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" class="form-control" [(ngModel)]="registerDto.password" required [ngClass]="{ 'is-invalid': submitted && registerForm.password.errors }" />
+    <div *ngIf="submitted && registerForm.password.errors" class="invalid-feedback">
+      <div *ngIf="registerForm.password.errors.required">Password is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Confirm Password</label>
+    <input type="password" formControlName="confirmPassword" class="form-control" [(ngModel)]="registerDto.confirmPassword" required [ngClass]="{ 'is-invalid': submitted && registerForm.confirmPassword.errors }" />
+    <div *ngIf="submitted && registerForm.confirmPassword.errors" class="invalid-feedback">
+      <div *ngIf="registerForm.confirmPassword.errors.required">Confirm password is required</div>
+    </div>
+  </div>
+  <hr />
+  <div class="form-group">
+    <label for="birthdate">Birthdate (optional)</label>
+    <input type="date" formControlName="birthdate" class="form-control" [(ngModel)]="registerDto.birthdate" [ngClass]="{ 'is-invalid': submitted && registerForm.birthdate.errors }" />
+    <div *ngIf="submitted && registerForm.birthdate.errors" class="invalid-feedback">
+      <div *ngIf="registerForm.birthdate.errors.required">Last name is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone (optional)</label>
+    <input type="text" formControlName="email" class="form-control" [(ngModel)]="registerDto.phone" [ngClass]="{ 'is-invalid': submitted && registerForm.phone.errors }" />
+    <div *ngIf="submitted && registerForm.phone.errors" class="invalid-feedback">
+      <div *ngIf="registerForm.phone.errors.required">Phone is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button [disabled]="loading" class="btn btn-primary">Register</button>
+    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+  </div>
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+</form>
